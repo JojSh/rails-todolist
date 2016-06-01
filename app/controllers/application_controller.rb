@@ -8,7 +8,15 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in?
-    session[:current_email].present?
+    current_email.present?
+  end
+
+  def current_email     # getter
+    session[:current_email]
+  end
+
+  def sign_in_as(email)   # setter
+    session[:current_email] = email
   end
 
   protect_from_forgery with: :exception
