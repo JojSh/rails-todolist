@@ -7,8 +7,11 @@ feature "User completes todo" do
     create_todo 'Buy cat food'
 
     click_on 'Mark complete'
+    # click_on 'Mark incomplete'
 
     expect(page).to display_completed_todo "Buy cat food"
+    # expect(page).to display_todo "Buy cat food"
+    # expect(page).not_to display_completed_todo "Buy cat food"
   end
 
 end
